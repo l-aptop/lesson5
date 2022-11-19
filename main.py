@@ -6,12 +6,13 @@ session = Session()
 
 
 def urllib_test():
-    content = opener.open("https://httpbin.org/get")
+    opener.addheaders.append(("test", "Testing urllib"))
+    content = opener.open("https://httpbin.org/post", data=b"test")
     print(loads(content.read()))
 
 
 def requests_test():
-    content = session.get("https://httpbin.org/get")
+    content = session.post("https://httpbin.org/post", data="test", headers={"test": "Testing requests"})
     print(loads(content.text))
 
 

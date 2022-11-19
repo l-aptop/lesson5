@@ -20,3 +20,11 @@ print("Urllib:")
 urllib_test()
 print("Requests:")
 requests_test()
+
+
+def get_btc_price():
+    return float(session.get("https://coinmarketcap.com/").text.split(
+        '<a href="/currencies/bitcoin/markets/" class="cmc-link"><span>$')[1].split("</span>")[0].replace(",", ""))
+
+
+print(get_btc_price())

@@ -32,7 +32,7 @@ if asked in (1, 2):
         print("How much USD do you have?")
         asked = float(input("> "))
         clear()
-        print(f"{asked} USD = {uah_to_usd(asked)} UAH")
+        print(f"{asked} USD = {usd_to_uah(asked)} UAH")
         input("> ")
 else:
     print("Error: Please input 1 or 2")

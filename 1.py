@@ -27,7 +27,7 @@ def uah_to_usd_command():
     try:
         amount = float(amount_var.get())
         showinfo(title="Currency Exchange", message=f"{amount} UAH = {uah_to_usd(amount)} USD")
-    except TypeError:
+    except ValueError:
         showerror(title="Currency Exchange", message="Enter a number!")
     amount_var.set("")
     global objects
@@ -51,7 +51,7 @@ def usd_to_uah_command():
     try:
         amount = float(amount_var.get())
         showinfo(title="Currency Exchange", message=f"{amount} USD = {usd_to_uah(amount)} UAH")
-    except TypeError:
+    except ValueError:
         showerror(title="Currency Exchange", message="Enter a number!")
     amount_var.set("")
     global objects
